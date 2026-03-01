@@ -197,6 +197,19 @@ function initSitemap() {
             edge('branze', 'br' + i);
         });
 
+        // ─── CASE STUDIES children ───
+        var casesArr = [
+            'Wdrożenie w BUUK', 'Wdrożenie w Home&You', 'Wdrożenie w CTDI',
+            'Wdrożenie w Eton Shirts', 'Wdrożenie w Exterion Media', 'Wdrożenie w Nicols',
+            'Wdrożenie w New Yorker', 'Wdrożenie w NCC', 'Wdrożenie w S&P Polska',
+            'Wdrożenie w Saller Polbau', 'Wdrożenie w OSTP Group', 'Wdrożenie w TERG',
+            'Wdrożenie w WPP', 'Wdrożenie w Westfield'
+        ];
+        casesArr.forEach((l, i) => {
+            add('cs' + i, l, cx_(xCases), Y2 + i * ROW_H, 'casestudies', false);
+            edge('cases', 'cs' + i);
+        });
+
         // ─── WIEDZA children ───
         // Artykuły, E-booki, Podcasty, Webinary — direct children
         var wie1 = ['Artykuły', 'E-booki', 'Podcasty', 'Webinary'];
