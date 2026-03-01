@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <meta name="description" content="Aplikacja do śledzenia postępu prac nad stroną internetową ANEGIS.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="app">
         <!-- Sidebar -->
@@ -24,16 +27,38 @@
 
             <nav class="sidebar-nav">
                 <button class="nav-btn active" data-view="dashboard">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
                     Dashboard
                 </button>
                 <button class="nav-btn" data-view="tasks">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4" />
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                    </svg>
                     Zadania
                 </button>
                 <button class="nav-btn" data-view="worklog">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
                     Rejestr Godzin
+                </button>
+                <button class="nav-btn" data-view="sitemap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="5" r="3" />
+                        <line x1="12" y1="8" x2="12" y2="14" />
+                        <line x1="12" y1="14" x2="5" y2="20" />
+                        <line x1="12" y1="14" x2="19" y2="20" />
+                        <circle cx="5" cy="20" r="2" />
+                        <circle cx="19" cy="20" r="2" />
+                    </svg>
+                    Mapa Strony
                 </button>
             </nav>
 
@@ -49,7 +74,9 @@
                 <div class="stat-card">
                     <div class="stat-label">Ogólny postęp</div>
                     <div class="stat-value" id="overall-progress">0%</div>
-                    <div class="stat-bar"><div class="stat-bar-fill" id="overall-progress-bar"></div></div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" id="overall-progress-bar"></div>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Ukończone zadania</div>
@@ -140,7 +167,11 @@
                         <p class="view-subtitle">Dziennik pracy — zalogowane godziny i aktywności</p>
                     </div>
                     <button class="btn-primary" id="btn-add-entry">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
                         Dodaj wpis
                     </button>
                 </div>
@@ -174,7 +205,8 @@
                         </div>
                         <div class="form-group full-width">
                             <label for="entry-comment">Zadanie / Komentarz</label>
-                            <input type="text" id="entry-comment" class="form-input" placeholder="Opis wykonanej pracy...">
+                            <input type="text" id="entry-comment" class="form-input"
+                                placeholder="Opis wykonanej pracy...">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -203,9 +235,28 @@
                     </tbody>
                 </table>
             </section>
+
+            <!-- Sitemap View -->
+            <section class="view" id="view-sitemap">
+                <div class="view-header">
+                    <div>
+                        <h2>Mapa Strony</h2>
+                        <p class="view-subtitle">Interaktywna struktura witryny www.anegis.com</p>
+                    </div>
+                </div>
+                <div id="sitemap-root"
+                    style="width: 100%; height: calc(100vh - 140px); border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07);">
+                </div>
+            </section>
         </main>
     </div>
 
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/reactflow@11.11.4/dist/umd/index.js" crossorigin></script>
+    <link href="https://cdn.jsdelivr.net/npm/reactflow@11.11.4/dist/style.css" rel="stylesheet" />
+    <script src="sitemap.js"></script>
 </body>
+
 </html>
